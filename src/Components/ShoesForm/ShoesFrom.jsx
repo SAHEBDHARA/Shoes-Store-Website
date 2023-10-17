@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ShoeForm = () => {
+const ShoeForm = ({onFormSubmit }) => {
   const [shoe, setShoe] = useState({
     name: '',
     description: '',
@@ -19,9 +19,7 @@ const ShoeForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here, you can handle the form submission and add the shoe data to your list.
-    console.log(shoe);
-    // You might want to call an API, update your state, or perform other actions.
+    onFormSubmit(shoe);
   };
 
   return (
